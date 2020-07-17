@@ -40,6 +40,7 @@ import UIKit
     @IBInspectable public var placeholderColor: UIColor = UIColor.lightGray
     @IBInspectable public var underlineColor: UIColor = UIColor.darkGray
     @IBInspectable public var updatedUnderlineColor: UIColor = UIColor.clear
+    @IBInspectable public var inputUnderlineColor: UIColor = UIColor.lightGray
     @IBInspectable public var secureText: Bool = false
     @IBInspectable public var needToUpdateUnderlines: Bool = true
     @IBInspectable public var characterBackgroundColor: UIColor = UIColor.clear
@@ -208,12 +209,12 @@ import UIKit
     }
 
     private func updateUnderlines() {
-        for label in labels {
-            let index = labels.firstIndex(of: label) ?? 0
-            if (!highlightInputUnderline || !isInput(index)) && isPlaceholder(index) {
-                   underlines[index].backgroundColor = underlineColor
-            }
-            else{
+        labels.enumerated().forEach { (index, label) in
+            if (highlightInputUnderline && isInput(index)) {
+                underlines[index].backgroundColor = inputUnderlineColor
+            } else if isPlaceholder(index) {
+                underlines[index].backgroundColor = underlineColor
+            } else{
                 underlines[index].backgroundColor = updatedUnderlineColor
             }
         }
