@@ -36,23 +36,23 @@ import UIKit
             font = font.withSize(fontSize)
         }
     }
-    @IBInspectable public var textColor: UIColor = UIColor.clear 
-    @IBInspectable public var placeholderColor: UIColor = UIColor.lightGray
-    @IBInspectable public var underlineColor: UIColor = UIColor.darkGray
-    @IBInspectable public var updatedUnderlineColor: UIColor = UIColor.clear
-    @IBInspectable public var inputUnderlineColor: UIColor = UIColor.lightGray
+    @IBInspectable public var textColor: UIColor = .clear
+    @IBInspectable public var placeholderColor: UIColor = .lightGray
+    @IBInspectable public var underlineColor: UIColor = .darkGray
+    @IBInspectable public var updatedUnderlineColor: UIColor = .clear
+    @IBInspectable public var inputUnderlineColor: UIColor = .lightGray
     @IBInspectable public var secureText: Bool = false
     @IBInspectable public var needToUpdateUnderlines: Bool = true
-    @IBInspectable public var characterBackgroundColor: UIColor = UIColor.clear
+    @IBInspectable public var characterBackgroundColor: UIColor = .clear
     @IBInspectable public var characterBackgroundCornerRadius: CGFloat = 0
     @IBInspectable public var highlightInputUnderline: Bool = false
     
     //MARK: Customizable from code
-    public var keyboardType: UIKeyboardType = UIKeyboardType.alphabet
-    public var keyboardAppearance: UIKeyboardAppearance = UIKeyboardAppearance.default
-    public var autocorrectionType: UITextAutocorrectionType = UITextAutocorrectionType.no
-    public var font: UIFont = UIFont.systemFont(ofSize: 14)
-    public var allowedCharacterSet: CharacterSet = CharacterSet.alphanumerics
+    public var keyboardType: UIKeyboardType = .alphabet
+    public var keyboardAppearance: UIKeyboardAppearance = .default
+    public var autocorrectionType: UITextAutocorrectionType = .no
+    public var font: UIFont = .systemFont(ofSize: 14)
+    public var allowedCharacterSet: CharacterSet = .alphanumerics
     public var textContentType: UITextContentType! = nil
     
     private var _inputView: UIView?
