@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable open class PinCodeTextField: UIView {
+@IBDesignable open class PinCodeTextField: UIView, UITextInputTraits {
     public weak var delegate: PinCodeTextFieldDelegate?
     
     //MARK: Customizable from Interface Builder
@@ -48,6 +48,8 @@ import UIKit
     @IBInspectable public var highlightInputUnderline: Bool = false
     
     //MARK: Customizable from code
+    public var returnKeyType: UIReturnKeyType = .default
+    public var autocapitalizationType: UITextAutocapitalizationType = .none
     public var keyboardType: UIKeyboardType = .alphabet
     public var keyboardAppearance: UIKeyboardAppearance = .default
     public var autocorrectionType: UITextAutocorrectionType = .no
