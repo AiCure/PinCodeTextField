@@ -45,7 +45,11 @@ import UIKit
     @IBInspectable public var needToUpdateUnderlines: Bool = true
     @IBInspectable public var characterBackgroundColor: UIColor = .clear
     @IBInspectable public var characterBackgroundCornerRadius: CGFloat = 0
-    @IBInspectable public var highlightInputUnderline: Bool = false
+    @IBInspectable public var highlightInputUnderline: Bool = false {
+        didSet {
+            updateUnderlines()
+        }
+    }
     
     //MARK: Customizable from code
     public var returnKeyType: UIReturnKeyType = .default
